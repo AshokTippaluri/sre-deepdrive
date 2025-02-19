@@ -1,0 +1,32 @@
+########################################
+## DOCKERFILE FOR CREATING NGINX BASE IMAGE
+########################################
+
+FROM nginx:1.27.3
+
+## Combine RUN commands to reduce layers
+RUN apt-get update -y \
+ && apt-get install -y curl awscli net-tools telnet dnsutils vim \
+ && apt upgrade -y libcurl4 libexpat1 libuv1 \
+ && aws configure set default.s3.signature_version s3v4
+
+## Configure timezone
+RUN ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
+
+## Configure Nginx user
+RUN userdel -r nginx \
+ && groupadd -g 1115 nginx \
+ && useradd -g nginx -u 1115 -c 'User for Nginx software' -s /bin/bash -m nginx \
+ && touch /var/run/nginx.pid \
+ && chown -R nginx:nginx /etc/nginx /usr/share/nginx /var/log/nginx /var/run/nginx.pid /var/cache/nginx
+
+## Copy files from S3
+WORKDIR /etc/nginx
+RUN aws s3 cp s3://syn-dev-s3-devops/software/Nginx/index.html /usr/share/nginx/html/ \
+ && aws s3 cp s3://syn-dev-s3-devops/software/Nginx/synapse.gif /usr/share/nginx/html/
+
+## Cleanup
+RUN rm /etc/nginx/conf.d/* \
+ && rm /etc/nginx/nginx.conf \
+ && mkdir -p /etc/nginx/conf.d/ssl.crt \
+ && mkdir -p /etc/nginx/conf.d/ssl.key
