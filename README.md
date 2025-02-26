@@ -1,2 +1,1 @@
-# Azure
-Azure Administration (Az-104) Exam Questions.
+ docker rm $(docker ps -a -q -f status=exited)
