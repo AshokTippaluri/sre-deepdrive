@@ -1,0 +1,15 @@
+"Good [morning/afternoon/evening], everyone. My name is Ashok Chandra Reddy Tippaluri, and I am an experienced Site Reliability Engineer (SRE) and Cloud Engineer with over 4 years of experience in designing, automating, and maintaining scalable infrastructure.
+
+Currently, I am working at Dotdash Meredith as an SRE, where I focus on cloud infrastructure automation, CI/CD pipeline optimization, and Kubernetes-based deployments. Before that, I worked as a NOC Engineer at Tanla Platforms, handling cloud migrations and monitoring infrastructure health.
+
+My expertise includes:
+✅ Cloud & Containers – AWS, Kubernetes (EKS, ECS), Docker
+✅ Infrastructure as Code (IaC) – Terraform, Ansible
+✅ Automation & Scripting – Python, Shell scripting
+✅ CI/CD & Monitoring – Jenkins, Prometheus, Grafana, CloudWatch, Zabbix
+✅ Web & Security – Nginx, ELK Stack, and AWS security best practices
+
+In my current role, I have successfully migrated on-prem infrastructure to AWS, automated cloud provisioning using Terraform, and implemented CI/CD pipelines with Jenkins for Kubernetes deployments. I also focus on enhancing system reliability and reducing downtime using monitoring tools like CloudWatch, New Relic, and Zabbix.
+
+I am passionate about automation, scalability, and improving system reliability, and I am excited about this opportunity to contribute my skills and learn from this team. Looking forward to the discussion!"
+
